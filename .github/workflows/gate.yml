@@ -1,0 +1,23 @@
+name: MAWS hive
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Unit tests
+        run: python3 -m unittest tests.test_maws -v
+      - name: Automate all hive stories
+        run: python3 -m maws.automate
+      - name: Shadow pass fixture
+        run: |
+          python3 -m maws vendor/unified_framework/examples/checkov_pass.json \
+            --telemetry vendor/unified_framework/examples/telemetry_ok.json \
+            --service ci
