@@ -1,14 +1,14 @@
 # MAWS — multi-agent workflow supervisor
 
-GitHub-ready local repo: `~/Desktop/maws`
+GitHub: [harishapuri/MAWS](https://github.com/harishapuri/MAWS)
 
 This is the **orchestrator hive** from *Design of Multi Agent Autonomous Workflow Systems Using Agentic AI Frameworks*. Named agents share one environment (Checkov + telemetry + bus). The supervisor assigns work. Scoring still lives in [unifiedframework](https://github.com/harishapuri/unifiedframework) (CRC η × ZeroGuard Ψ × InfraAgent Ω → one DSA pick).
 
 It is **not** a fourth scoring plane. Patches stay `apply: false`. Autonomy **α2**. Stop/wait compensates by staying on blue.
 
 ```bash
-git clone <this-repo>
-cd maws
+git clone https://github.com/harishapuri/MAWS.git
+cd MAWS
 python3 -m maws.demo          # http://127.0.0.1:8874/
 python3 -m maws.automate      # seven stories, exit 1 if a pick drifts
 ```
